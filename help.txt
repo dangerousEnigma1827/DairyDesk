@@ -1,0 +1,140 @@
+Good — here’s a **clean, step-by-step Claude prompt sequence** you can literally copy-paste. This is structured so you build a backend you actually understand and can debug.
+
+We’ll go **layer by layer for DairyDesk auth backend**.
+
+---
+
+# 🚀 PROMPT 1 — Project Bootstrap (ONLY setup)
+
+👉 Paste into Claude:
+
+> Create a clean Express backend setup for a MERN project called "DairyDesk".
+>
+> Requirements:
+>
+> * server.js entry file
+> * Express app setup
+> * dotenv config usage
+> * MongoDB connection using mongoose
+> * dbConnect function in /config/db.js
+> * clean folder structure (controllers, routes, models, middleware, utils, config)
+> * basic error handling for DB connection failure
+>
+> Keep it minimal and production-style. No auth yet.
+
+---
+
+# 🧱 PROMPT 2 — Utility Layer
+
+> Now create utility helpers for the same DairyDesk backend:
+>
+> 1. asyncHandler middleware for Express
+> 2. ApiError class (extends Error, includes statusCode)
+> 3. ApiResponse class (standard response format)
+>
+> Requirements:
+>
+> * clean ES module syntax
+> * reusable across project
+> * production style
+> * no auth logic yet
+>
+> Show file structure + code.
+
+---
+
+# 🔐 PROMPT 3 — Auth System (Core)
+
+> Build authentication system for DairyDesk backend.
+>
+> Requirements:
+>
+> * User model (name, email, password, role: owner/dm/customer)
+> * bcrypt password hashing
+> * JWT token generation
+> * signup controller
+> * login controller
+> * logout controller (cookie/token based)
+> * store JWT in HTTP-only cookie
+>
+> Use asyncHandler and ApiResponse/ApiError utilities created earlier.
+> Keep it clean and beginner-friendly but production structured.
+
+---
+
+# 🛡️ PROMPT 4 — Auth Middleware
+
+> Now create authentication middleware for DairyDesk backend.
+>
+> Requirements:
+>
+> * verifyJWT middleware (reads token from cookies or headers)
+> * attaches user to req.user
+> * protects routes
+> * role-based middleware (ownerOnly, dmOnly, customerOnly placeholders)
+>
+> Use JWT verification and ApiError handling.
+> Keep it modular and reusable.
+
+---
+
+# 🧪 PROMPT 5 — Test-ready Routes
+
+> Now create Express routes for auth system:
+>
+> * POST /api/auth/signup
+> * POST /api/auth/login
+> * POST /api/auth/logout
+> * GET /api/auth/me (protected route)
+>
+> Connect controllers and middleware properly.
+> Ensure routes are ready for Postman testing.
+> Keep structure clean and minimal.
+
+---
+
+# ⚡ How to use this correctly (VERY IMPORTANT)
+
+After EACH prompt:
+
+1. Run the backend
+2. Test with Postman
+3. Fix errors immediately
+4. Only then move to next prompt
+
+---
+
+# 🧠 Why this works (key insight)
+
+Instead of:
+
+> “generate full backend”
+
+You are doing:
+
+> “build backend like Lego blocks”
+
+So you always know:
+
+* what broke
+* where it broke
+* why it broke
+
+---
+
+# 🚀 Bonus (what you should do next after auth)
+
+After this, your next phase will be:
+
+* Customer model
+* Delivery model
+* Owner dispatch API
+* DM delivery API
+
+That’s where your app becomes real.
+
+---
+
+If you want, I can next give you:
+👉 **full DairyDesk database schema (Customer, Delivery, Payment, Dispatch)**
+so your backend design becomes 100% consistent before you write more code.
